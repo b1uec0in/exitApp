@@ -6,9 +6,8 @@
     </WINDOW>
   </UILAYOUT>
 
-  <_CMD cmd="{ userVariable.backKeyPressedTime=date.now() }" />
   <FUNCTION id="exitApp">
-     <CMD condition="date.getSec(date.diffDate(userVariable.backKeyPressedTime,date.now)) gt 2">
+     <CMD condition="!userVariable.backKeyPressedTime or date.getSec(date.diffDate(userVariable.backKeyPressedTime,date.now)) gt 2">
         <CMD cmd="{ userVariable.backKeyPressedTime=date.now() }" />
         <CMD cmd="device.toastPopup('\'뒤로\'버튼을 한번 더 누르면 종료됩니다.')" />
         <ELSECMD cmd="application.terminate"/>
