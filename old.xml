@@ -6,7 +6,7 @@
     </WINDOW>
   </UILAYOUT>
 
-  <CMD cmd="{ userVariable.backKeyPressedTime=date.now() }" />
+  <_CMD cmd="{ userVariable.backKeyPressedTime=date.now() }" />
   <FUNCTION id="exitApp">
      <CMD condition="date.getSec(date.diffDate(userVariable.backKeyPressedTime,date.now)) gt 2">
         <CMD cmd="{ userVariable.backKeyPressedTime=date.now() }" />
