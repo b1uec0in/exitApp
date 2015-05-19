@@ -2,7 +2,7 @@
 <MOML version="1.1.8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.applusform.com/xsd/moml_ui_1.1.8.xsd">
   <UILAYOUT portrait="320,480" landscape="320,480" >
     <WINDOW layout="0,0,320,480" align="linear" img="white">
-      <BUTTON layout="60,60" margin="20,0,20,0" defaultImg="exit.png" onClick="function.exitApp"/>
+      <BUTTON layout="60,60" margin="20,0,20,0" text="두번 눌러 종료" _defaultImg="exit.png" onClick="function.exitApp"/>
     </WINDOW>
   </UILAYOUT>
 
