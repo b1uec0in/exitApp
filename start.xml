@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MOML version="1.1.8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.applusform.com/xsd/moml_ui_1.1.8.xsd">
+  <UILAYOUT portrait="320,480" landscape="320,480" >
+    <WINDOW layout="0,0,320,480" img="white">
+      <BUTTON layout="60,60" margin="20,0,20,0" defaultImg="exit.png" onClick="function.exitApp"/>
+    </WINDOW>
+  </UILAYOUT>
+
+  <CMD cmd="{ userVariable.backKeyPressedTime=date.now() }" />
+  <FUNCTION id="exitApp">
+     <CMD condition="date.getSec(date.diffDate(userVariable.backKeyPressedTime,date.now)) gt 2">
+        <CMD cmd="{ userVariable.backKeyPressedTime=date.now() }" />
+        <CMD cmd="device.toastPopup('\'뒤로\'버튼을 한번 더 누르면 종료됩니다.')" />
+        <ELSECMD cmd="application.terminate"/>
+     </CMD>
+  </FUNCTION>
+</MOML>
