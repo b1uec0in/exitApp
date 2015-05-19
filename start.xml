@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MOML version="1.1.8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.applusform.com/xsd/moml_ui_1.1.8.xsd">
+  <UILAYOUT portrait="320,480" landscape="320,480" >
+    <WINDOW layout="0,0,320,480" align="linear" img="white">
+      <BUTTON layout="60,60" margin="20,0,20,0" text="두번 눌러 종료" _defaultImg="exit.png" onClick="function.exitApp"/>
+    </WINDOW>
+  </UILAYOUT>
+
+  <FUNCTION id="exitApp">
+     <RETURN condition="userVariable.exitPressed" cmd="application.terminate"/>
+     <CMD cmd="device.toastPopup('\'뒤로\'버튼을 한번 더 누르면 종료됩니다.')" />
+     <CMD cmd="userVariable.exitPressed = true"/>
+     <CMD cmd="userVariable.exitPressed = false" delay="2000"/>
+  </FUNCTION>
+</MOML>
